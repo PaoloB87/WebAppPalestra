@@ -37,8 +37,6 @@ namespace WebAppPalestra.Controllers
         [HttpPost]
         public IActionResult GetDto(SheetModel sheetModel)
         {
-
-
             return PartialView();
 
         }
