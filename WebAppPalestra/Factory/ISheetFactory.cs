@@ -7,6 +7,6 @@ namespace WebAppPalestra.Factory
 {
     public interface ISheetFactory
     {
-        public void Create();
+        public void GetSexyGiovanni();
     }
 }
