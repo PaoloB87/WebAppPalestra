@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAppPalestra.Models;
+using WebAppPalestra.Factory;
 
 namespace WebAppPalestra.Controllers
 {
@@ -37,7 +38,17 @@ namespace WebAppPalestra.Controllers
         [HttpPost]
         public IActionResult GetDto(SheetModel sheetModel)
         {
-            return PartialView();
+
+            ISheetFactory appoSheet;
+            appoSheet = new Sheet1();
+            if (sheetModel.Age<18) {
+
+                appoSheet = new Sheet1();
+
+                return PartialView(appoSheet);
+            }
+
+            return PartialView(appoSheet);
 
         }
     }

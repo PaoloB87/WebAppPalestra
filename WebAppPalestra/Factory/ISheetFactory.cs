@@ -7,5 +7,8 @@ namespace WebAppPalestra.Factory
 {
     public interface ISheetFactory
     {
+
+        public String Sheet { get; set; }
+
     }
 }
