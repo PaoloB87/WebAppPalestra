@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebAppPalestra.Factory
 {
-    public interface ISheetFactory
+    public abstract class ASheet
     {
-
-        public String Sheet { get; set; }
-
+        public abstract string Sheet { get; set; }
     }
 }

@@ -39,16 +39,9 @@ namespace WebAppPalestra.Controllers
         public IActionResult GetDto(SheetModel sheetModel)
         {
 
-            ISheetFactory appoSheet;
+            ASheet appoSheet;
             appoSheet = new Sheet1();
-            if (sheetModel.Age<18) {
-
-                appoSheet = new Sheet1();
-
-                return PartialView(appoSheet);
-            }
-
-            return PartialView(appoSheet);
+            return View(appoSheet);
 
         }
     }

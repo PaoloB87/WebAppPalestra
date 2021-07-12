@@ -5,16 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebAppPalestra.Factory
 {
-    public class Sheet1 : ISheetFactory
+    public class Sheet1 : ASheet
     {
-
-        public string _Sheet;
-
-        public string Sheet {
-
-            get => _Sheet;
-            set => _Sheet = "Scheda1";
-        }
-
+        public override string Sheet { get => "sheet1"; set {  } }
     }
 }
