@@ -13,10 +13,12 @@ namespace WebAppPalestra.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFactory factory;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFactory factory)
         {
             _logger = logger;
+            this.factory = factory;
         }
 
         public IActionResult Index()
@@ -39,9 +41,11 @@ namespace WebAppPalestra.Controllers
         public IActionResult GetDto(SheetModel sheetModel)
         {
 
-            ASheet appoSheet;
-            appoSheet = new Sheet1();
-            return View(appoSheet);
+            //ASheet appoSheet;
+            //appoSheet = new Sheet1();
+            //return View(appoSheet);
+
+            return View(factory.FindSheet(sheetModel));
 
         }
     }
