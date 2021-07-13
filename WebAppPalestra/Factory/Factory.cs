@@ -7,22 +7,22 @@ using WebAppPalestra.Factory;
 
 namespace WebAppPalestra.Factory
 {
-    public class Factory:IFactory
+    public class Factory : IFactory
     {
 
         ASheet appoSheet;
 
-        public ASheet FindSheet(SheetModel sheetModel) {
+        public ASheet FindSheet(SheetModel sheetModel)
+        {
 
-            if (sheetModel.Age < 18) {
+            if (sheetModel.Age < 18)
+            {
 
                 appoSheet = new Sheet1();
 
 
             }
-
             return appoSheet;
-
         }
 
     }

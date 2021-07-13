@@ -10,39 +10,24 @@ namespace WebAppPalestra.Business
     public class RulesSheet
     {
 
-        enum AppoSheet {
-
-            sheet1,
-            sheet2,
-            sheet3,
-            sheet4
-
-        }
-
-        public Enum FindSheet(SheetModel sheetModel)
+        public SheetType FindSheet(SheetModel sheetModel)
         {
-
             if (sheetModel.Age < 18 && sheetModel.Weight < 60 && sheetModel.Height < 150)
             {
-
-                AppoSheet = { sheet1 = "",sheet1 = "",sheet1 = "",sheet1 = ""};
-
-
-            } else if (sheetModel.Age >= 18 && sheetModel.Age < 50 && sheetModel.Weight < 60 && sheetModel.Height >= 150 && sheetModel.Height < 180) {
-
-
+                return SheetType.sheet1;
+            }
+            else if (sheetModel.Age >= 18 && sheetModel.Age < 50 && sheetModel.Weight < 60 && sheetModel.Height >= 150 && sheetModel.Height < 180)
+            {
+                return SheetType.sheet2;
             }
             else if (sheetModel.Age >= 50 && sheetModel.Weight > 80 && sheetModel.Height >= 150 && sheetModel.Height < 180)
             {
-
-
+                return SheetType.sheet3;
             }
-            else { 
-            
+            else
+            {
+                return SheetType.sheet4;
             }
-
-            return appoSheet;
-
         }
     }
 }
