@@ -9,8 +9,6 @@ namespace WebAppPalestra.Factory
 {
     public interface IFactory
     {
-
         public ASheet FindSheet(SheetType sheet);
-
     }
 }

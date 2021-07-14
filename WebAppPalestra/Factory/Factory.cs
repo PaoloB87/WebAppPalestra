@@ -11,28 +11,19 @@ namespace WebAppPalestra.Factory
     public class Factory : IFactory
     {
 
-        ASheet appoSheet;
-
         public ASheet FindSheet(SheetType sheet)
         {
-
             switch (sheet)
             {
                 case SheetType.sheet1:
-                    appoSheet = new Sheet1();
-                    break;
+                    return new Sheet1();
                 case SheetType.sheet2:
-                    appoSheet = new Sheet2();
-                    break;
+                    return new Sheet2();
                 case SheetType.sheet3:
-                    appoSheet = new Sheet3();
-                    break;
+                    return new Sheet3();
                 default:
-                    appoSheet = new Sheet4();
-                    break;
+                    return new Sheet4();
             }
-
-            return appoSheet;
         }
 
     }

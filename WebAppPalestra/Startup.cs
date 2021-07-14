@@ -8,7 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAppPalestra.Business;
 using WebAppPalestra.Factory;
+using WebAppPalestra.Middlewares;
 
 namespace WebAppPalestra
 {
@@ -26,6 +28,7 @@ namespace WebAppPalestra
         {
             services.AddControllersWithViews();
             services.AddScoped<IFactory, WebAppPalestra.Factory.Factory>();
+            services.AddScoped<RulesSheet>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

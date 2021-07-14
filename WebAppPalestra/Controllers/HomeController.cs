@@ -15,11 +15,13 @@ namespace WebAppPalestra.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IFactory factory;
+        private readonly RulesSheet appo;
 
-        public HomeController(ILogger<HomeController> logger, IFactory factory)
+        public HomeController(ILogger<HomeController> logger, IFactory factory, RulesSheet appo)
         {
             _logger = logger;
             this.factory = factory;
+            this.appo = appo;
         }
 
         public IActionResult Index()
@@ -41,16 +43,7 @@ namespace WebAppPalestra.Controllers
         [HttpPost]
         public IActionResult GetDto(SheetModel sheetModel)
         {
-
-            //ASheet appoSheet;
-            //appoSheet = new Sheet1();
-            //return View(appoSheet);
-
-            RulesSheet appo = new RulesSheet();
-
             return View(factory.FindSheet(appo.FindSheet(sheetModel)));
-            //return View(factory.FindSheet(RulesSheet.FindSheet(sheetModel)));
-
         }
     }
 }
