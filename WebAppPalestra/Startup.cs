@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppPalestra.Business;
 using WebAppPalestra.Factory;
-using WebAppPalestra.Middlewares;
 
 namespace WebAppPalestra
 {
