@@ -7,7 +7,7 @@ using WebAppPalestra.Models;
 
 namespace WebAppPalestra.Business
 {
-    public class RulesSheet
+    public  class RulesSheet
     {
 
         public SheetType FindSheet(SheetModel sheetModel)

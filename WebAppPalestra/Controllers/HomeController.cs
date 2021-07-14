@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppPalestra.Models;
 using WebAppPalestra.Factory;
+using WebAppPalestra.Business;
 
 namespace WebAppPalestra.Controllers
 {
@@ -45,7 +46,10 @@ namespace WebAppPalestra.Controllers
             //appoSheet = new Sheet1();
             //return View(appoSheet);
 
-            return View(factory.FindSheet(sheetModel));
+            RulesSheet appo = new RulesSheet();
+
+            return View(factory.FindSheet(appo.FindSheet(sheetModel)));
+            //return View(factory.FindSheet(RulesSheet.FindSheet(sheetModel)));
 
         }
     }

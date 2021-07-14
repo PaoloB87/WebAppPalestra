@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppPalestra.Models;
 using WebAppPalestra.Factory;
+using WebAppPalestra.Business;
 
 namespace WebAppPalestra.Factory
 {
@@ -12,16 +13,25 @@ namespace WebAppPalestra.Factory
 
         ASheet appoSheet;
 
-        public ASheet FindSheet(SheetModel sheetModel)
+        public ASheet FindSheet(SheetType sheet)
         {
 
-            if (sheetModel.Age < 18)
+            switch (sheet)
             {
-
-                appoSheet = new Sheet1();
-
-
+                case SheetType.sheet1:
+                    appoSheet = new Sheet1();
+                    break;
+                case SheetType.sheet2:
+                    appoSheet = new Sheet2();
+                    break;
+                case SheetType.sheet3:
+                    appoSheet = new Sheet3();
+                    break;
+                default:
+                    appoSheet = new Sheet4();
+                    break;
             }
+
             return appoSheet;
         }
 
