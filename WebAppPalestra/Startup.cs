@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppPalestra.Business;
 using WebAppPalestra.Factory;
+using WebAppPalestra.Middleware;
 
 namespace WebAppPalestra
 {
@@ -28,6 +29,7 @@ namespace WebAppPalestra
             services.AddControllersWithViews();
             services.AddScoped<IFactory, WebAppPalestra.Factory.Factory>();
             services.AddScoped<RulesSheet>();
+            services.AddScoped<LoginMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +49,8 @@ namespace WebAppPalestra
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseMiddleware<LoginMiddleware>();
 
             app.UseAuthorization();
 
