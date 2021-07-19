@@ -39,7 +39,6 @@ namespace WebAppPalestra.Controllers
             }
             else {
 
-
                 return View("Login");
 
             }
